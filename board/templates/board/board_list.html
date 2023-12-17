@@ -1,0 +1,117 @@
+{% if board_list %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Connect</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+      max-width: 200px;
+    }
+
+    td{
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    th {
+      background-color: #FFE6E6;
+    }
+
+    a {
+      text-decoration-line: none;
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align: center; margin-top: 50px;margin-bottom: 50px;">
+    <a href="/board" style="text-decoration: none; font-size: 30px; color: #006400; font-weight: bold;">Daily Connect</a>
+  </div>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>제목</th>
+      <th>미리보기</th>
+      <th>게시일</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for board in board_list %}
+      <tr>
+        <td>{{ board.id }}</td>
+        <td><strong><a href="/board/{{ board.id }}/">{{board.subject}}</a></strong></td>
+        <td><strong><a href="/board/{{ board.id }}/">{{board.content}}</a></strong></td>
+        <td><strong><a href="/board/{{ board.id }}/">{{board.create_date}}</a></strong></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</body>
+</html>
+{% else %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Connect</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+      max-width: 200px;
+    }
+
+    td{
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    th {
+      background-color: #FFE6E6;
+    }
+
+    a {
+      text-decoration-line: none;
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align: center; margin-top: 50px;margin-bottom: 50px;">
+    <a href="/board" style="text-decoration: none; font-size: 30px; color: #006400; font-weight: bold;">Daily Connect</a>
+  </div>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>제목</th>
+      <th>미리보기</th>
+      <th>게시일</th>
+    </tr>
+  </thead>
+</table>
+<div style="text-align: center; margin-top: 200px;margin-bottom: 50px;">
+  <a href="/board" style="text-decoration: none; font-size: 20px; color: #000000; font-weight: bold;">현재 게시물이 없습니다...</a>
+</div>
+
+</body>
+</html>
+    {% endif %}

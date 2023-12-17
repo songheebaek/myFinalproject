@@ -1,0 +1,22 @@
+<form action="board/board_list.html" method="post">
+    {% csrf_token %}
+    {{from.as_p}}
+
+    <div>
+        <p>
+            <label for="id_subject">제목 : </label>
+            <input type="text" name="subject" maxlength="200" required_id="id_subject">
+        </p>
+
+        <p>
+            <label for="id_content">내용 : </label>
+            <textarea name="content" cols="50" rows="20" required_id="id_content"> </textarea>
+        </p>
+        
+        <p>
+            <label for="id_create_date">작성일 : </label>
+            <input type="text" name="create_date" required_id="id_create_date">
+        </p>
+    </div>
+    <input type="submit" value="등록">
+</form>

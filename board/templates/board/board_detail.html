@@ -1,0 +1,24 @@
+<div style="text-align: center; margin-top: 50px;margin-bottom: 50px;">
+    <a href="/board" style="text-decoration: none; font-size: 30px; color: #006400; font-weight: bold;">Daily Connect</a>
+  </div>
+    <div style="
+        text-align: center; margin-top: 0px; margin-left: 250px; margin-right: 250px;
+        border: 1px solid black;
+        border-radius: 50px; 
+        background-color: #FFE6E6;
+        padding: 0px;">
+        <h2>{{ board.subject }}</h2></div>
+    <div style="
+        text-align: center;
+        margin-top: 0px;
+        margin-left: 250px; 
+        margin-right: 250px;
+        border: 1px dashed black;
+        border-radius: 14px;
+        margin-top: 10px;
+        padding: 40px;">
+        {{ board.content }}
+    </div>
+<div style="position: absolute; right: 20px; bottom: 15px;">
+    <strong>작성일시 :</strong> {{ board.create_date}}
+</div>
