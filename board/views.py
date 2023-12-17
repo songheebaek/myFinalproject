@@ -19,10 +19,6 @@ def detail(request, board_id):
     context = {'board' : board}
     return render(request, 'board/board_detail.html', context)
 
-def blog_home(request):
-    posts = Board.objects.all()
-    return render(request, 'board/blog_home.html', {'posts': posts})
-
 class create(generic.CreateView):
     model = Board
     fields = ['subject', 'content', 'create_date']
